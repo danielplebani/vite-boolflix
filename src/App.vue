@@ -1,5 +1,4 @@
 <script>
-
 import { state } from './state.js';
 
 export default{
@@ -41,17 +40,24 @@ export default{
 
     <div class="d-flex gap-3 flex-wrap justify-content-center">
       <ul class="list-group" v-for="movie in state.movies">
-        <li class="list-group-item">TITOLO: {{movie.title}}</li>
+        <li class="list-group-item" >TITOLO: {{movie.title}}</li>
         <li class="list-group-item">TITOLO ORIGINALE: {{movie.original_title}}</li>
-        <li class="list-group-item">LINGUA: {{movie.original_language}}</li>
+        <li class="list-group-item d-flex">
+          <span class="me-2">LINGUA: </span>
+          <div>
+            <span class="me-1">{{movie.original_language}}</span>
+            <img :src="state.languageFlags[movie.original_language]" alt="language-flag">
+          </div> 
+        </li>
         <li class="list-group-item">VOTO: {{movie.vote_average}}</li>
         <li class="list-group-item">TIPO DI CONTENUTO: {{movie.media_type}}</li>
       </ul>
     </div>
-    
 
   </div>
 </template> 
+
+
 
 <style lang="scss" scoped>
 ul{
@@ -62,5 +68,9 @@ ul{
       border-color: black;
     }
   
+}
+
+img{
+  width: 40px;
 }
 </style>
