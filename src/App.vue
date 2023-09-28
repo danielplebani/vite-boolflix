@@ -26,15 +26,15 @@ export default{
 </script>
 
 <template>
-  <div class="p-5 d-flex flex-column align-items-center">
+  <div class="p-2 d-flex flex-column align-items-center">
 
-    <h1 class="mb-2">BOOLFLIX</h1>
+    <h1 class="mb-2 text-danger">BOOLFLIX</h1>
 
-    <nav class="navbar bg-body-tertiary mb-5">
-      <div class="container-fluid">
-        <div class="d-flex">
-          <input class="form-control me-1" type="search" placeholder="Search a movie" v-model="searchedMovie" @keyup.enter="searchResults()">
-          <button class="btn btn-outline-success border-2" type="submit" @click="searchResults()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <nav class="navbar mb-5 bg-primary-subtle">
+      <div class="container-fluid bg-primary-subtle">
+        <div class="d-flex bg-primary-subtle">
+          <input class="form-control me-1 bg-info border-0 text-white" type="search" placeholder="Search a movie" v-model="searchedMovie" @keyup.enter="searchResults()">
+          <button class="btn btn-info border-2" type="submit" @click="searchResults()"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
     </nav>
@@ -45,6 +45,7 @@ export default{
         <li class="list-group-item">TITOLO ORIGINALE: {{movie.original_title}}</li>
         <li class="list-group-item">LINGUA: {{movie.original_language}}</li>
         <li class="list-group-item">VOTO: {{movie.vote_average}}</li>
+        <li class="list-group-item">TIPO DI CONTENUTO: {{movie.media_type}}</li>
       </ul>
     </div>
     
