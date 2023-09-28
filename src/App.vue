@@ -40,16 +40,18 @@ export default{
 
     <div class="d-flex gap-3 flex-wrap justify-content-center">
       <ul class="list-group" v-for="movie in state.movies">
-        <li class="list-group-item" >TITOLO: {{movie.title}}</li>
+        <li class="list-group-item">TITOLO: {{movie.title}}</li>
+      
         <li class="list-group-item">TITOLO ORIGINALE: {{movie.original_title}}</li>
+
         <li class="list-group-item d-flex">
           <span class="me-2">LINGUA: </span>
-          <div>
-            <span class="me-1">{{movie.original_language}}</span>
-            <img :src="state.languageFlags[movie.original_language]" alt="language-flag">
-          </div> 
+          <span class="me-2" v-if="!['en', 'es', 'fr', 'it', 'ja', 'tr'].includes(movie.original_language)">{{movie.original_language}}</span>
+          <img :src="state.languageFlags[movie.original_language]">
         </li>
+
         <li class="list-group-item">VOTO: {{movie.vote_average}}</li>
+        
         <li class="list-group-item">TIPO DI CONTENUTO: {{movie.media_type}}</li>
       </ul>
     </div>
