@@ -14,7 +14,7 @@ export default{
 
 <template>
     <AppHeader id="AppHeader"></AppHeader>
-    <AppMain id="AppMain" class="d-flex justify-content-center"></AppMain>
+    <AppMain id="AppMain"></AppMain>
 </template> 
 
 
@@ -28,5 +28,7 @@ export default{
 #AppMain{
   height: calc(100vh - 7rem);
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
 }
 </style>

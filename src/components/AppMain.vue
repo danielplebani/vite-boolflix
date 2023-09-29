@@ -83,7 +83,6 @@ export default{
     overflow-y: auto;
     position: absolute;
     top: 0;
-    right: 0;
     cursor: pointer;
 
     li{
