@@ -6,7 +6,7 @@ export default{
     return{
       state,
 
-      searchedMovie: '',
+      searchedMovie: ''
     }
   },
 
@@ -58,7 +58,13 @@ export default{
           <img class="flags" :src="state.languageFlags[movie.original_language]">
         </li>
 
-        <li class="list-group-item" v-if="movie.media_type != 'person'">VOTO: {{movie.vote_average}}</li>
+        <li class="list-group-item d-flex align-items-center" v-if="movie.media_type != 'person'">
+          <span class="me-1">VOTO:</span>
+
+          <i v-for="i in Math.ceil(movie.vote_average / 2)" class="fa-solid fa-star text-warning"></i>
+          <i v-for="i in (5 - Math.ceil((movie.vote_average / 2)))" class="fa-regular fa-star" v-if="movie.vote_average != 0"></i>
+          <i v-for="i in 5" class="fa-regular fa-star" v-if="movie.vote_average == 0"></i>
+        </li>
         
         <li class="list-group-item">TIPO: {{movie.media_type}}</li>
       </ul>
