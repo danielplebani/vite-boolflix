@@ -16,7 +16,7 @@ export default{
     <div class="d-flex align-items-center">
         <div class="col-6 text-white d-flex justify-content-between align-items-center">
             <img id="logo-header" src="/src/assets/img/scritta.png" alt="logo netflix">
-            <div style="font-size: large; cursor: pointer;" class="col-8 d-flex justify-content-between">
+            <div class="col-8 d-flex justify-content-between">
               <span>Home</span>
               <span>Serie TV</span>
               <span>Film</span>
@@ -45,8 +45,18 @@ export default{
     margin-left: 5rem;
 }
 
+span{
+    font-size: large;
+    cursor: pointer;
+}
+
+span:hover, i:hover{
+    color: red;
+}
+
 #UserImg{
     border-radius: 50%;
+    border: 3px solid red;
     object-fit: cover;
     width: 50px;
     aspect-ratio: 1 / 1;
