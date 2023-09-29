@@ -19,6 +19,7 @@ export const state = reactive({
       axios
         .get(this.base_url)
         .then(response => {
+          console.log(response.data.results);
           this.movies = response.data.results;
         })
         .catch(error => {
