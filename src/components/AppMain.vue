@@ -86,7 +86,7 @@ export default{
     cursor: pointer;
 
     li{
-        background-color: rgba(0, 0, 0, 0.944);
+        background-color: rgba(0, 0, 0, 0.926);
         color: white;
         border: 0;
 

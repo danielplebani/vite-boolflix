@@ -15,9 +15,12 @@ export default{
   
     methods:{
       searchResults(){
-        state.base_url =  `https://api.themoviedb.org/3/search/multi?api_key=d7e5bf42a15a20ec8d10fa9ee57b36fe&include_adult=false&language=it-IT&page=1&media_type=movie&query=${this.searchedMovie}`
-        state.connectAPI();
-        this.searchedMovie = '';
+        if (this.searchedMovie != '') {
+          state.base_url =  `https://api.themoviedb.org/3/search/multi?api_key=d7e5bf42a15a20ec8d10fa9ee57b36fe&include_adult=false&language=it-IT&page=1&media_type=movie&query=${this.searchedMovie}`
+          state.connectAPI();
+          this.searchedMovie = '';
+        }
+        
       }
     },
   
