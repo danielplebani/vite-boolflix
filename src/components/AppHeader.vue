@@ -60,5 +60,6 @@ span:hover, i:hover{
     object-fit: cover;
     width: 50px;
     aspect-ratio: 1 / 1;
+    cursor: pointer;
 }
 </style>

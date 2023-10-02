@@ -31,47 +31,50 @@ export default{
 
 
 <template>
-    <div class="d-flex gap-2 flex-wrap pb-5">
-        <div class="position-relative" v-for="(movie, index) in state.movies">
-            <ul class="list-group" v-if="movie.poster_path">
+  <div class="d-flex gap-2 flex-wrap pb-5">
+      <div class="position-relative" v-for="(movie, index) in state.movies">
+          <ul class="list-group" v-if="movie.poster_path">
 
                <img class="coverMovie" :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" @mouseenter="showInfo(index)" @mouseleave="hideInfo(index)">
                
                <div @mouseenter="showInfo(index)" @mouseleave="hideInfo(index)" class="info" v-if="overImage == index">
                   <li class="list-group-item">
-                  <span v-if="movie.media_type == 'movie'"><strong>TITOLO:</strong> <br> {{movie.title}}</span>
-                  <span v-if="movie.media_type == 'tv'"><strong>TITOLO:</strong> <br> {{movie.name}}</span>
+                    <span v-if="movie.media_type == 'movie'"><strong>TITOLO:</strong> <br> {{movie.title}}</span>
+                    <span v-if="movie.media_type == 'tv'"><strong>TITOLO:</strong> <br> {{movie.name}}</span>
                   </li>
                   
                   <li class="list-group-item">
-                  <span v-if="movie.media_type == 'movie'"><strong>TITOLO ORIGINALE:</strong> <br> {{movie.original_title}}</span>
-                  <span v-if="movie.media_type == 'tv' || movie.media_type == 'person'"><strong>TITOLO ORIGINALE:</strong> <br> {{movie.original_name}}</span>
+                    <span v-if="movie.media_type == 'movie'"><strong>TITOLO ORIGINALE:</strong> <br> {{movie.original_title}}</span>
+                    <span v-if="movie.media_type == 'tv' || movie.media_type == 'person'"><strong>TITOLO ORIGINALE:</strong> <br> {{movie.original_name}}</span>
                   </li>
  
                   <li class="list-group-item" v-if="movie.overview"><strong>TRAMA:</strong> <br> {{movie.overview}}</li>
+
+                  <li class="list-group-item" v-if="movie.overview"><strong>CAST:</strong> <br> attori</li>
                   
                   <li class="list-group-item">
-                <div class="d-flex align-items-center">
-                  <span class="me-2"><strong>LINGUA:</strong></span>
-                  <span v-if="!['en', 'es', 'fr', 'it', 'ja', 'tr'].includes(movie.original_language)">{{movie.original_language}}</span>
-                  <img class="flags" :src="state.languageFlags[movie.original_language]" v-if="['en', 'es', 'fr', 'it', 'ja', 'tr'].includes(movie.original_language)">
-                </div>
-                  
+                    <div class="d-flex align-items-center">
+                      <span class="me-2"><strong>LINGUA:</strong></span>
+                      <span v-if="!['en', 'es', 'fr', 'it', 'ja', 'tr'].includes(movie.original_language)">{{movie.original_language}}</span>
+                      <img class="flags" :src="state.languageFlags[movie.original_language]" v-if="['en', 'es', 'fr', 'it', 'ja', 'tr'].includes    (movie.original_language)">
+                    </div>
                   </li>
                   
                   <li class="list-group-item">
-                  <div class="d-flex align-items-center">
-                    <span class="me-1"><strong>VOTO:</strong></span>
-                
-                    <i v-for="i in Math.ceil(movie.vote_average / 2)" class="fa-solid fa-star text-warning"></i>
-                    <i v-for="i in (5 - Math.ceil((movie.vote_average / 2)))" class="fa-regular fa-star" v-if="movie.vote_average != 0"></i>
-                    <i v-for="i in 5" class="fa-regular fa-star" v-if="movie.vote_average == 0"></i>
-                  </div>
+                    <div class="d-flex align-items-center">
+                      <span class="me-1"><strong>VOTO:</strong></span>
+                  
+                      <i v-for="i in Math.ceil(movie.vote_average / 2)" class="fa-solid fa-star text-warning"></i>
+                      <i v-for="i in (5 - Math.ceil((movie.vote_average / 2)))" class="fa-regular fa-star" v-if="movie.vote_average != 0"></i>
+                      <i v-for="i in 5" class="fa-regular fa-star" v-if="movie.vote_average == 0"></i>
+                    </div>
                   </li>
+
+                  <li class="list-group-item" v-if="movie.overview">genere 1,genere 2...</li>
                </div>
-            </ul>
-        </div>
-    </div>
+          </ul>
+      </div>
+  </div>
 </template> 
 
 
