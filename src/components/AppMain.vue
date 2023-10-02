@@ -49,8 +49,6 @@ export default{
                   </li>
  
                   <li class="list-group-item" v-if="movie.overview"><strong>TRAMA:</strong> <br> {{movie.overview}}</li>
-
-                  <li class="list-group-item" v-if="movie.overview"><strong>CAST:</strong> <br> attori</li>
                   
                   <li class="list-group-item">
                     <div class="d-flex align-items-center">
@@ -69,8 +67,6 @@ export default{
                       <i v-for="i in 5" class="fa-regular fa-star" v-if="movie.vote_average == 0"></i>
                     </div>
                   </li>
-
-                  <li class="list-group-item" v-if="movie.overview">genere 1,genere 2...</li>
                </div>
           </ul>
       </div>
